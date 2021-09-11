@@ -19,7 +19,7 @@ const compressedObject = (list, object) => {
   list.map(stringElementFromObject => {
     if (Object.keys(object).includes(stringElementFromObject)) {
       arrayFromPush.push(object[stringElementFromObject]);
-    }else {
+    } else {
       arrayFromPush.push(stringElementFromObject);
     };
   });
@@ -27,7 +27,7 @@ const compressedObject = (list, object) => {
 }
 
 // Décompression (inversion du dictionnaire)
-const decompressedObject = object => {
+const decompressedObject = (object) => {
   var myNewObject = {};
   for (const [key, value] of Object.entries(object)) {
     myNewObject[value] = key;
@@ -81,10 +81,9 @@ const referenceObject = (list) => {
   }
   return myReferenceObject;
 }
-
-var splitStringTArray = splitStringToArray(myText)
-var createObj = createObject(splitStringTArray)
-var referenceObj = referenceObject(keysForReferenceObject(createObj))
-var compressedObj = compressedObject(splitStringTArray, referenceObj)
-var gatherTheList = compressedObj.join(' ')
-
+var parseText = splitStringToArray(myText);
+var Createdobject = createObject(parseText);
+var referencedObject = referenceObject(keysForReferenceObject(Createdobject));
+var objectCompressed = compressedObject(parseText, referencedObject);
+var gatherTheList = objectCompressed.join(' ');
+console.log(gatherTheList)
