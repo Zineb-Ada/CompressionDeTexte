@@ -81,6 +81,7 @@ const referenceObject = (list) => {
   }
   return myReferenceObject;
 }
+
 var parseText = splitStringToArray(myText);
 var Createdobject = createObject(parseText);
 var referencedObject = referenceObject(keysForReferenceObject(Createdobject));
